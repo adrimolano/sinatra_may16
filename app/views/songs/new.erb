@@ -17,13 +17,13 @@
     <label>Author:</label>
     <input type="text" name="author" value="<%= @song && @song.author %>">
   </div>
-  <<div>
+  <div>
     <label>Title:</label>
     <input type="text" name="title" value="<%= @song && @song.title %>">
   </div>
   <div>
     <label>Url:</label>
-    <input type="text" name="url" value="<%= @song && @song.url %>">
+    <input type="url" name="url" value="<%= @song.url %>">
   </div>
   <div>
     <input type="submit" value="Submit" >

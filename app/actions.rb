@@ -4,22 +4,22 @@ get '/' do
 end
 
 get '/songs' do
-  @songs = song.all
+  @songs = Song.all
   erb :'songs/index'
 end
 
 get '/songs/new' do
-  @song = song.new
+  @song = Song.new
   erb :'songs/new'
 end
 
 get '/songs/:id' do
-  @song = song.find params[:id]
+  @song = Song.find params[:id]
   erb :'songs/show'
 end
 
 post '/songs' do
-  @song = song.new(
+  @song = Song.new(
     title:   params[:title],
     url: params[:url],
     author:  params[:author]

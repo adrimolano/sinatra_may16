@@ -10,6 +10,8 @@ gem 'sinatra-activerecord'
 
 gem 'puma'
 gem 'tux'
+gem 'bootstrap-sass'
+gem 'sass-rails'
 
 group :development, :test do
   gem 'pry'
