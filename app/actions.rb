@@ -3,30 +3,30 @@ get '/' do
   erb :index
 end
 
-get '/messages' do
-  @messages = Message.all
-  erb :'messages/index'
+get '/songs' do
+  @songs = song.all
+  erb :'songs/index'
 end
 
-get '/messages/new' do
-  @message = Message.new
-  erb :'messages/new'
+get '/songs/new' do
+  @song = song.new
+  erb :'songs/new'
 end
 
-get '/messages/:id' do
-  @message = Message.find params[:id]
-  erb :'messages/show'
+get '/songs/:id' do
+  @song = song.find params[:id]
+  erb :'songs/show'
 end
 
-post '/messages' do
-  @message = Message.new(
-    # title:   params[:title],
-    content: params[:content],
+post '/songs' do
+  @song = song.new(
+    title:   params[:title],
+    url: params[:url],
     author:  params[:author]
   )
-  if @message.save
-    redirect '/messages'
+  if @song.save
+    redirect '/songs'
   else
-    erb :'messages/new'
+    erb :'songs/new'
   end
 end
